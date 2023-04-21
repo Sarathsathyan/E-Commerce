@@ -8,7 +8,7 @@ from .models import Category, SubCategory
 # import serializers
 from .serializers import CategorySerializer, SubCategorySerializer
 
-# Views
+# Create views here.
 class CategoryViewSet(viewsets.ModelViewSet):
     """
         Viewset for Category
@@ -39,7 +39,6 @@ class SubCategoryViewSet(generics.ListCreateAPIView, viewsets.ViewSet):
     queryset = SubCategory.objects.all()
     serializer_class = SubCategorySerializer
     filter_backends = [filters.SearchFilter]
-
     search_fields = ['name', 'description', 'category__name']
 
     def list(self, request, category_pk=None):
@@ -72,4 +71,3 @@ class SubCategoryViewSet(generics.ListCreateAPIView, viewsets.ViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
-    

@@ -111,7 +111,7 @@ Method: POST
 
 3. View single product
 ----------------------
-API : **localhost:8080/api/products/{product_id}**
+API : ** localhost:8080/api/products/{product_id} **
 Method : GET
 
 4. Delete, update APIs are same as above by changing the id's

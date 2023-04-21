@@ -67,13 +67,16 @@ Method : DELETE
 
 ```
 1. List all subcategories under category
+----------------------------------------
 API : localhost:8080/api/categories/{category_id}/subcategories/?limit=10&offset=0
 
 2. List all subcategories under category with search params
+-----------------------------------------------------------
 API: localhost:8080/api/categories/2/subcategories/?search={search_params}&name={other_parms}
 Method : GET
 
 3. Create Subcategory under Category
+------------------------------------
 API: localhost:8080/api/categories/{category_id}/subcategories/
 Method : POST
 body : 
@@ -84,8 +87,30 @@ body :
 }
 4. Update Category Same API above and change method to PUT
 5. Delete subcategory 
+---------------------
 API : localhost:8080/api/categories/{category_id}/subcategories/{sub_category_id}
 Method : DELETE
 ```
+3. Product API's
+```
+1. List all products with filters like (price range, category, name etc.. )
+API : localhost:8080/api/products/?price={min},{max}&category_id={category_id}&limit=2&offset=0
+Method : GET
 
+2. Create a product
+API : localhost:8080/api/products/
+Method: POST
+{
+    "name":"",
+    "description": "",
+    "price":"",
+    "sub_category":{sub_category_id}
+}
+
+3. View single product
+API : localhost:8080/api/products/{product_id}
+Method : GET
+
+4. Delete, update APIs are same as above by changing the id's
+```
 

@@ -13,7 +13,8 @@
 ### API's 
 
 1. Create categories
-'''
+
+```
 localhost:8080/api/categories/
 Method : POST
 Sample Body
@@ -22,6 +23,6 @@ Sample Body
         "description":"Dress for mens, womens and childrens"
     }
 2. 
-'''
+```
 
 

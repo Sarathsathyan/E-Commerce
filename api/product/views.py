@@ -9,7 +9,11 @@ from .filters import ProductFilterSet
 # Create your views here.
 
 class ProductsViewSet(viewsets.ModelViewSet):
-
+    """
+        Products listing and create viewset
+        serializer : ProductSerializer
+        
+    """
     serializer_class = ProductSerializer
     filter_backends = (
         DjangoFilterBackend,
@@ -21,9 +25,15 @@ class ProductsViewSet(viewsets.ModelViewSet):
 
     def list(self, request, pk=None):
         queryset = self.filter_queryset(self.get_queryset())
+        # Setting up pagination
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
     
+
     def get_queryset(self):
         query_params = self.request.query_params
         if 'price' in query_params.keys():

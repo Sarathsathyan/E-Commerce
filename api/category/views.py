@@ -10,7 +10,9 @@ from .serializers import CategorySerializer, SubCategorySerializer
 # Create your views here.
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    
+    """
+        Viewset for Category
+    """
     serializer_class = CategorySerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['name','description']

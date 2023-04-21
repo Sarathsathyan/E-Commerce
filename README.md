@@ -72,7 +72,7 @@ API : localhost:8080/api/categories/{category_id}/subcategories/?limit=10&offset
 
 2. List all subcategories under category with search params
 -----------------------------------------------------------
-API: localhost:8080/api/categories/2/subcategories/?search={search_params}&name={other_parms}
+API: localhost:8080/api/categories/{category_id}/subcategories/?search={search_params}&name={other_parms}
 Method : GET
 
 3. Create Subcategory under Category
